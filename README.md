@@ -10,7 +10,7 @@ Ce petit projet est conçu avec
 
 1. Clone the project
 
-    git clone https://github.com/Dr-Lab1/react-products-list-project.git
+        git clone https://github.com/Dr-Lab1/react-products-list-project.git
    
 3. Install Packages
 4. Run the project
