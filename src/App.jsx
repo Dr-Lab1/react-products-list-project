@@ -5,12 +5,12 @@ import { ProductCategoryRow } from './components/products/productCategoryRow'
 import { ProductRow } from './components/products/productRow'
 
 const PRODUCTS = [
-  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
-  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
-  { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
-  { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
-  { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
-  { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
+  { category: "Fruits", price: 5, stocked: true, name: "Apple" },
+  { category: "Fruits", price: 3, stocked: true, name: "Dragonfruit" },
+  { category: "Fruits", price: 9, stocked: false, name: "Passionfruit" },
+  { category: "Vegetables", price: 10, stocked: true, name: "Spinach" },
+  { category: "Vegetables", price: 4, stocked: false, name: "Pumpkin" },
+  { category: "Vegetables", price: 7, stocked: true, name: "Peas" }
 ]
 
 function App() {
@@ -45,7 +45,8 @@ function App() {
     if (isChecked && !product.stocked)
       return false
 
-
+    if(product.price > range)
+      return false
 
     if (search && !product.name.includes(capitalizedWord(search)))
       return false
@@ -112,7 +113,7 @@ function ProductTable({ products }) {
     <thead>
       <tr>
         <th>Noms</th>
-        <th>Prix</th>
+        <th>Prix($)</th>
       </tr>
     </thead>
 
