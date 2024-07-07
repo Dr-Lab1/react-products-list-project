@@ -26,12 +26,22 @@ function App() {
     setIsChecked(!isChecked);
   }
 
+  function capitalizedWord() {
+    const firstLetter = search.charAt(0)
+    const firstLetterCap = firstLetter.toUpperCase()
+    const remainingLetters = search.slice(1)
+
+    return firstLetterCap + remainingLetters
+  }
+
+
   const visibleProducts = PRODUCTS.filter(product => {
     if (isChecked && !product.stocked)
       return false
 
 
-    if (search && !product.name.includes(search))
+
+    if (search && !product.name.includes(capitalizedWord(search)))
       return false
 
     return true;
