@@ -1,5 +1,5 @@
 export function ProductRow({product}) {
-    return <tr key={product.name}>
+    return <tr>
         <td className={product.stocked ? '' : 'text-danger'}>{product.name}</td>
         <td>{product.price}</td>
     </tr>

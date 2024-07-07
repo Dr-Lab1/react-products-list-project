@@ -14,16 +14,37 @@ const PRODUCTS = [
 ]
 
 function App() {
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  function handleCheck() {
+    setIsChecked(!isChecked);
+  }
+
+  const visibleProducts = PRODUCTS.filter(product => {
+    if (isChecked && !product.stocked) {
+      return false
+    }
+
+    return true;
+
+  });
+
+
   return <div className="container col-6">
-    <NavBar />
-    <ProductTable products={PRODUCTS} />
+    <NavBar isChecked={isChecked} onCheck={handleCheck} />
+    <ProductTable products={visibleProducts} />
   </div>
 }
 
-function NavBar() {
+function NavBar({ isChecked, onCheck }) {
   return <div className="container">
-    <SearchBar placeholder="Rechercher..." />
-    <CheckBox label="N'afficher que des produits disponibles" />
+    <SearchBar placeholder="Rechercher..."  />
+    <CheckBox 
+      label="N'afficher que des produits disponibles" 
+      isChecked={isChecked} 
+      onCheck={onCheck} 
+    />
   </div>
 }
 
@@ -35,10 +56,10 @@ function ProductTable({ products }) {
   products.map((item) => {
 
     if (item.category !== lastCategory) {
-      rows.push(<ProductCategoryRow product={item} />);
+      rows.push(<ProductCategoryRow key={item.category} product={item} />);
     }
 
-    rows.push(<ProductRow product={item} />);
+    rows.push(<ProductRow key={item.name} product={item} />);
 
     lastCategory = item.category;
 
