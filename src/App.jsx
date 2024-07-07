@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { SearchBar } from './components/forms/searchBar'
+import { CheckBox } from './components/forms/checkBox'
 
 function App() {
   return <div className="container col-6">
@@ -10,6 +11,7 @@ function App() {
 function NavBar() {
   return <div className="container">
     <SearchBar placeholder="Rechercher..." />
+    <CheckBox label="N'afficher que des produits disponibles" />
   </div>
 }
 
