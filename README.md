@@ -12,5 +12,8 @@ Ce petit projet est conçu avec
 
         git clone https://github.com/Dr-Lab1/react-products-list-project.git
    
-3. Install Packages
+2. Install Packages
+
+        npm install
+   
 4. Run the project
