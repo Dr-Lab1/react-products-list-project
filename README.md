@@ -1,6 +1,4 @@
-# React Products List Project
-
-Ce      
+# React Products List Project      
 
 # Results 
 
