@@ -1,6 +1,6 @@
 # React Products List Project
 
-Ce petit projet est conçu  
+Ce petit projet est   
 
 # Results 
 
