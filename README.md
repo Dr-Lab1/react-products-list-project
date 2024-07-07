@@ -1,6 +1,6 @@
 # React Products List Project
 
-Ce petit projet 
+Ce petit projet est conçu avec ReatJS
 
 # Results 
 
