@@ -10,3 +10,4 @@ Ce petit projet est conçu avec ReatJS
 
 1. Clone the project
 2. Install Packages
+3. Run the project
