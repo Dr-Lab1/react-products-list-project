@@ -27,11 +27,11 @@ function App() {
   }
 
   const visibleProducts = PRODUCTS.filter(product => {
-    if (isChecked && !product.stocked) 
+    if (isChecked && !product.stocked)
       return false
-    
 
-    if(search && !product.name.includes(search))
+
+    if (search && !product.name.includes(search))
       return false
 
     return true;
@@ -48,10 +48,10 @@ function App() {
 function NavBar({ search, onSearch, isChecked, onCheck }) {
   return <div className="container">
     <SearchBar placeholder="Rechercher..." search={search} onSearch={onSearch} />
-    <CheckBox 
-      label="N'afficher que des produits disponibles" 
-      isChecked={isChecked} 
-      onCheck={onCheck} 
+    <CheckBox
+      label="N'afficher que des produits disponibles"
+      isChecked={isChecked}
+      onCheck={onCheck}
     />
   </div>
 }
