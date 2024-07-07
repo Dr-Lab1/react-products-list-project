@@ -16,15 +16,23 @@ const PRODUCTS = [
 function App() {
 
   const [isChecked, setIsChecked] = useState(false);
+  const [search, setSearch] = useState('');
+
+  function handleSearch(e) {
+    setSearch(e.target.value)
+  }
 
   function handleCheck() {
     setIsChecked(!isChecked);
   }
 
   const visibleProducts = PRODUCTS.filter(product => {
-    if (isChecked && !product.stocked) {
+    if (isChecked && !product.stocked) 
       return false
-    }
+    
+
+    if(search && !product.name.includes(search))
+      return false
 
     return true;
 
@@ -32,14 +40,14 @@ function App() {
 
 
   return <div className="container col-6">
-    <NavBar isChecked={isChecked} onCheck={handleCheck} />
+    <NavBar isChecked={isChecked} onCheck={handleCheck} search={search} onSearch={handleSearch} />
     <ProductTable products={visibleProducts} />
   </div>
 }
 
-function NavBar({ isChecked, onCheck }) {
+function NavBar({ search, onSearch, isChecked, onCheck }) {
   return <div className="container">
-    <SearchBar placeholder="Rechercher..."  />
+    <SearchBar placeholder="Rechercher..." search={search} onSearch={onSearch} />
     <CheckBox 
       label="N'afficher que des produits disponibles" 
       isChecked={isChecked} 
