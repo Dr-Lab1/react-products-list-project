@@ -14,4 +14,6 @@
 
         npm install
    
-4. Run the project
+3. Run the project
+
+        npm run dev
