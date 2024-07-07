@@ -17,6 +17,7 @@ function App() {
 
   const [isChecked, setIsChecked] = useState(false);
   const [search, setSearch] = useState('');
+  const [range, setRange] = useState(10);
 
   function handleSearch(e) {
     setSearch(e.target.value)
@@ -24,6 +25,10 @@ function App() {
 
   function handleCheck() {
     setIsChecked(!isChecked);
+  }
+
+  function handleRange(e) {
+    setRange(e.target.value);
   }
 
   function capitalizedWord(word) {
@@ -51,19 +56,38 @@ function App() {
 
 
   return <div className="container col-6">
-    <NavBar isChecked={isChecked} onCheck={handleCheck} search={search} onSearch={handleSearch} />
+
+    <NavBar 
+      isChecked={isChecked} 
+      onCheck={handleCheck} 
+      search={search} 
+      onSearch={handleSearch}
+      range={range}
+      onRange={handleRange}
+    />
+
     <ProductTable products={visibleProducts} />
+
   </div>
 }
 
-function NavBar({ search, onSearch, isChecked, onCheck }) {
+function NavBar({ search, onSearch, isChecked, onCheck, range, onRange }) {
   return <div className="container">
-    <SearchBar placeholder="Rechercher..." search={search} onSearch={onSearch} />
+
+    <SearchBar 
+      placeholder="Rechercher..." 
+      search={search} 
+      onSearch={onSearch} 
+      range={range}
+      onRange={onRange}
+    />
+
     <CheckBox
       label="N'afficher que des produits disponibles"
       isChecked={isChecked}
       onCheck={onCheck}
     />
+
   </div>
 }
 
