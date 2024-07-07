@@ -26,10 +26,11 @@ function App() {
     setIsChecked(!isChecked);
   }
 
-  function capitalizedWord() {
-    const firstLetter = search.charAt(0)
+  function capitalizedWord(word) {
+    word = word.toLowerCase();
+    const firstLetter = word.charAt(0)
     const firstLetterCap = firstLetter.toUpperCase()
-    const remainingLetters = search.slice(1)
+    const remainingLetters = word.slice(1)
 
     return firstLetterCap + remainingLetters
   }
