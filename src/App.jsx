@@ -10,7 +10,11 @@ const PRODUCTS = [
   { category: "Fruits", price: 9, stocked: false, name: "Passionfruit" },
   { category: "Vegetables", price: 10, stocked: true, name: "Spinach" },
   { category: "Vegetables", price: 4, stocked: false, name: "Pumpkin" },
-  { category: "Vegetables", price: 7, stocked: true, name: "Peas" }
+  { category: "Vegetables", price: 7, stocked: true, name: "Peas" },
+  { category: "Meats", price: 1, stocked: false, name: "Boudin" },
+  { category: "Meats", price: 6, stocked: true, name: "Jambon" },
+  { category: "Meats", price: 8, stocked: false, name: "Steak" },
+  { category: "Meats", price: 2, stocked: false, name: "Poulet" },
 ]
 
 function App() {
