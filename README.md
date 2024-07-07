@@ -9,5 +9,8 @@ Ce petit projet est conçu avec
 # How to run it 
 
 1. Clone the project
-2. Install Packages
-3. Run the project
+
+    git clone https://github.com/Dr-Lab1/react-products-list-project.git
+   
+3. Install Packages
+4. Run the project
