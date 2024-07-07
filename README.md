@@ -1,6 +1,6 @@
 # React Products List Project
 
-Ce petit     
+Ce      
 
 # Results 
 
